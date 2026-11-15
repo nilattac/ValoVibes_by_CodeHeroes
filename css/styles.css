@@ -761,3 +761,12 @@ body {
 .valorant-crosshair.crosshair-click .crosshair-right {
   transform: translateX(-2px) scaleX(0.85);
 }
+
+/* Conversation Log Card */
+.log-card {
+  background-color: #253444;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
