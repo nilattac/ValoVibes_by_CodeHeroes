@@ -654,3 +654,110 @@ body {
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   Cursor Personalizado: Mira de Valorant (High Performance)
+   ========================================================================== */
+@media (pointer: fine) {
+  html, body, *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+.valorant-crosshair {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  margin-left: -16px;
+  margin-top: -16px;
+  pointer-events: none;
+  z-index: 999999;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  will-change: transform;
+  contain: layout style;
+}
+
+.crosshair-line {
+  position: absolute;
+  background-color: #ffffff;
+  border: 1.5px solid #000000;
+  border-radius: 2.5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.95);
+  transition: transform 0.12s cubic-bezier(0.2, 0, 0.3, 1), background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Líneas simétricas con espacio central vacío (gap) */
+.crosshair-top {
+  top: 3px;
+  left: 14px;
+  width: 4px;
+  height: 9px;
+}
+
+.crosshair-bottom {
+  bottom: 3px;
+  left: 14px;
+  width: 4px;
+  height: 9px;
+}
+
+.crosshair-left {
+  left: 3px;
+  top: 14px;
+  width: 9px;
+  height: 4px;
+}
+
+.crosshair-right {
+  right: 3px;
+  top: 14px;
+  width: 9px;
+  height: 4px;
+}
+
+/* Efecto al apuntar sobre enlaces, botones o elementos interactivos */
+.valorant-crosshair.crosshair-hover .crosshair-line {
+  background-color: var(--accent-cyan);
+  box-shadow: 0 0 6px rgba(0, 240, 255, 0.85);
+}
+
+.valorant-crosshair.crosshair-hover .crosshair-top {
+  transform: translateY(-2px);
+}
+
+.valorant-crosshair.crosshair-hover .crosshair-bottom {
+  transform: translateY(2px);
+}
+
+.valorant-crosshair.crosshair-hover .crosshair-left {
+  transform: translateX(-2px);
+}
+
+.valorant-crosshair.crosshair-hover .crosshair-right {
+  transform: translateX(2px);
+}
+
+/* Efecto de disparo / recoil al hacer clic */
+.valorant-crosshair.crosshair-click .crosshair-line {
+  background-color: var(--accent-red);
+  box-shadow: 0 0 8px rgba(255, 70, 85, 0.95);
+}
+
+.valorant-crosshair.crosshair-click .crosshair-top {
+  transform: translateY(2px) scaleY(0.85);
+}
+
+.valorant-crosshair.crosshair-click .crosshair-bottom {
+  transform: translateY(-2px) scaleY(0.85);
+}
+
+.valorant-crosshair.crosshair-click .crosshair-left {
+  transform: translateX(2px) scaleX(0.85);
+}
+
+.valorant-crosshair.crosshair-click .crosshair-right {
+  transform: translateX(-2px) scaleX(0.85);
+}

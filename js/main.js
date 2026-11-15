@@ -69,4 +69,60 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // =========================================================================
+  // Cursor Personalizado: Mira de Valorant de Alto Rendimiento (60 / 120 FPS)
+  // =========================================================================
+  const crosshair = document.getElementById('valorant-crosshair');
+  if (crosshair && window.matchMedia('(pointer: fine)').matches) {
+    let mouseX = -100;
+    let mouseY = -100;
+    let isVisible = false;
+
+    // Captura continua y pasiva de coordenadas del ratón (sin recalcular layout)
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!isVisible) {
+        isVisible = true;
+        crosshair.style.opacity = '1';
+      }
+    }, { passive: true });
+
+    // Ocultar si el puntero abandona la ventana
+    document.addEventListener('mouseleave', () => {
+      crosshair.style.opacity = '0';
+      isVisible = false;
+    });
+
+    document.addEventListener('mouseenter', () => {
+      crosshair.style.opacity = '1';
+      isVisible = true;
+    });
+
+    // Bucle acelerado por GPU con requestAnimationFrame
+    function renderCrosshair() {
+      if (isVisible) {
+        crosshair.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      }
+      requestAnimationFrame(renderCrosshair);
+    }
+    requestAnimationFrame(renderCrosshair);
+
+    // Animación de disparo/retroceso al hacer clic
+    window.addEventListener('mousedown', () => {
+      crosshair.classList.add('crosshair-click');
+    });
+
+    window.addEventListener('mouseup', () => {
+      crosshair.classList.remove('crosshair-click');
+    });
+
+    // Feedback táctico sobre elementos interactivos
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .custom-summary, .team-card, .btn');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => crosshair.classList.add('crosshair-hover'));
+      el.addEventListener('mouseleave', () => crosshair.classList.remove('crosshair-hover'));
+    });
+  }
 });
