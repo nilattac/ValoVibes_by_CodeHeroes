@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadReadme = async () => {
       if (loaded) return;
       try {
-        const res = await fetch('README.md');
+        const res = await fetch('assets/README.md');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const text = await res.text();
         content.innerHTML = marked.parse(text);
