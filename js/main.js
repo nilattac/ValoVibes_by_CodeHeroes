@@ -177,3 +177,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+const navLinks = document.querySelector('.nav-links');
+const navScroll = document.querySelector('.nav-scroll');
+
+if (navLinks && navScroll) {
+  const updateNavArrow = () => {
+    const sinScroll = navLinks.scrollWidth <= navLinks.clientWidth;
+    const alFinal = navLinks.scrollLeft + navLinks.clientWidth >= navLinks.scrollWidth - 2;
+    navScroll.classList.toggle('at-end', sinScroll || alFinal);
+  };
+
+  navLinks.addEventListener('scroll', updateNavArrow, { passive: true });
+  window.addEventListener('resize', updateNavArrow);
+  updateNavArrow();
+}

@@ -96,7 +96,7 @@ Si el jugador acepta una propuesta que sigue disponible, continúa habilitado y 
  
   * Finalmente se solicitó la inclusión del link a GitHub y otro para visualizar el ReadMe en ventana modal.
     * Se solicitó una corrección por no visualizarse en Vercel.
-    
+    * Se solicitó modificar la barra de navegación y las card de Heroes del Código para mejor visualizacion en celular (Responsive Web Design).
     * Por último se solicitó completar los promts faltantes al  Conversation Log.
 
 * **Comentarios:**
