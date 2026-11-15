@@ -622,6 +622,16 @@ body {
   letter-spacing: 1px;
 }
 
+.company-card > *,
+.company-stats > * {
+  min-width: 0;
+}
+
+.company-info,
+.stat-item {
+  overflow-wrap: anywhere;
+}
+
 /* Footer */
 .footer {
   background-color: #090e13;
@@ -647,7 +657,7 @@ body {
     justify-content: center;
   }
   .company-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -662,6 +672,32 @@ body {
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  /* Company card en celular */
+  .company-card {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  .company-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+  .stat-item {
+    padding: 1rem 0.5rem;
+  }
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .company-stats {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
