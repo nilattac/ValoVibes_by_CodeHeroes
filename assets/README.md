@@ -94,8 +94,10 @@ Si el jugador acepta una propuesta que sigue disponible, continúa habilitado y 
  
   * A continuación se solicitó elaborar el Conversation Log con todos los prompts utilizados.
  
-  * Finalmente se solicitó la inclusión del link a GitHub y otro para visualizar el ReadMe.
-
+  * Finalmente se solicitó la inclusión del link a GitHub y otro para visualizar el ReadMe en ventana modal.
+    * Se solicitó una corrección por no visualizarse en Vercel.
+    
+    * Por último se solicitó completar los promts faltantes al  Conversation Log.
 
 * **Comentarios:**
   * **Tokens:** Se utilizó Gemini 3.8 flash hasta agotar su cupo de tokens gratuitos y luego se continuó con Claude Sonnet 4.6.
@@ -147,4 +149,4 @@ La experiencia nos permite extraer los siguientes aprendizajes clave:
  
   * Desafíos en la Automatización Operativa: El bucle de intentos del agente al convertir imágenes entre formatos expone las limitaciones actuales de los entornos agénticos cuando se enfrentan a restricciones de dependencias del sistema operativo (comandos fallidos, falta de binarios instalados). Asimismo, el comportamiento del 'Web Page Inspector' al resolver la extracción mediante el acceso a rutas locales evidenció una capacidad de "atajo lógico" o resolución pragmática avanzada, aunque requiriese supervisión en los permisos de sobreescritura de datos.
  
-En definitiva, ValoVibes_by_CodeHeroes cumple con creces los objetivos del TP3, logrando una Landing Page responsive, moderna y fiel a la consigna. Este proyecto consolida nuestra capacidad para colaborar con Inteligencias Artificiales de vanguardia, entendiéndolas no solo como herramientas de autocompletado, sino como co-pilotos activos en el ciclo completo de desarrollo de sistemas web.
+En definitiva, creemos que ValoVibes_by_CodeHeroes cumple con creces los objetivos del TP3, logrando una Landing Page responsive, moderna y fiel a la consigna. Este proyecto consolida nuestra capacidad para colaborar con Inteligencias Artificiales de vanguardia, entendiéndolas no solo como herramientas de autocompletado, sino como co-pilotos activos en el ciclo completo de desarrollo de sistemas web.
