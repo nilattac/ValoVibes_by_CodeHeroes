@@ -70,6 +70,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Modal README (carga README.md)
+  const readmeModal = document.getElementById('readme-modal');
+  const openReadmeBtn = document.getElementById('open-readme');
+
+  if (readmeModal && openReadmeBtn) {
+    const closeButtons = readmeModal.querySelectorAll('[data-close-modal]');
+    const closeBtn = readmeModal.querySelector('.modal-close');
+    const content = document.getElementById('readme-content');
+    let loaded = false;
+
+    const loadReadme = async () => {
+      if (loaded) return;
+      try {
+        const res = await fetch('README.md');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const text = await res.text();
+        content.innerHTML = marked.parse(text);
+
+        content.querySelectorAll('a[href^="http"]').forEach(a => {
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+        });
+        loaded = true;
+      } catch (err) {
+        console.error('No se pudo cargar el README:', err);
+        content.textContent = 'No se pudo cargar el README. Si abriste el HTML con doble clic, probalo con Live Server o desde Vercel.';
+      }
+    };
+
+    const openModal = (e) => {
+      e.preventDefault();
+      readmeModal.hidden = false;
+      document.body.classList.add('modal-open');
+      closeBtn.focus();
+      loadReadme();
+    };
+
+    const closeModal = () => {
+      readmeModal.hidden = true;
+      document.body.classList.remove('modal-open');
+      openReadmeBtn.focus();
+    };
+
+    openReadmeBtn.addEventListener('click', openModal);
+    closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !readmeModal.hidden) closeModal();
+    });
+  }
+
   // =========================================================================
   // Cursor Personalizado: Mira de Valorant de Alto Rendimiento (60 / 120 FPS)
   // =========================================================================
@@ -119,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Feedback táctico sobre elementos interactivos
-    const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .custom-summary, .team-card, .btn');
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .custom-summary, .team-card, .btn, .modal-close');
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', () => crosshair.classList.add('crosshair-hover'));
       el.addEventListener('mouseleave', () => crosshair.classList.remove('crosshair-hover'));
