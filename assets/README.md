@@ -18,7 +18,7 @@ Landing page del TP3 de la materia Desarrollo de Sistemas Web (Front End) - IFTS
 * Vargas Nancy
 
 
-## Consigna Asignada por el Docente
+## Consigna asignada por el docente
 
 
 **ASIGNACIÓN DOCENTE · SORTEO · S12-B**  
@@ -50,31 +50,35 @@ Si el jugador acepta una propuesta que sigue disponible, continúa habilitado y 
 * **Entorno de desarrollo agéntico:** Google Antigravity IDE
 * **Modelo de inteligencia artificial:** Gemini 3.8 Flash y Claude Sonnet 4.6
 * **Alcance de la asistencia con IA:**
-  * **Análisis y Especificación de Reglas:** Desglose lógico de las sentencias asignadas (Frases R3 y R4), identificando datos de entrada, condiciones concurrentes y consecuencias del sistema.
 
 
-  * **Arquitectura de Agentes Autónomos:** Propuesta de agentes inteligentes para emparejamiento, verificación de moderación, reserva atómica de cupos y coordinación de invitaciones.
+  * **Análisis y especificación de reglas:** Desglose lógico de las sentencias asignadas (Frases R3 y R4), identificando datos de entrada, condiciones concurrentes y consecuencias del sistema.
 
 
-  * **Modelado Visual y Diagramas:** Creación y estilización temática de diagramas de flujo interactivos con Mermaid.js.
+  * **Arquitectura de agentes autónomos:** Propuesta de agentes inteligentes para emparejamiento, verificación de moderación, reserva atómica de cupos y coordinación de invitaciones.
+
+
+  * **Modelado visual y diagramas:** Creación y estilización temática de diagramas de flujo interactivos con Mermaid.js.
 
 
   * **Desarrollo Front-End:** Maquetación semántica en HTML5, diseño responsivo y estética gamer en CSS3, e interactividad con JavaScript.
 
 
-  * **Generación y Optimización de Activos:**
+  * **Generación y optimización de activos:**
     * Generación del logo en alta resolución.
     * Optimización de imágenes en formato `.webp`.
     * Generación de cursor personalizado tipo mira de Valorant.
 
 
 * **Resumen de iteración:**
-  * En primera instancia se realizó el analisis requerido de cada frase y luego se solicitó al agente la generación de los diagramas correspondientes con Mermaid.js y el almacenado de todo temporariamente en el ReadMe.
+
+
+  * En primera instancia se realizó el análisis requerido de cada frase y luego se solicitó al agente la generación de los diagramas correspondientes con Mermaid.js y el almacenado de todo temporariamente en el ReadMe.
      
       * Se corrigieron detalles del desarrollo.
 
 
-  * Posteriormente se solicitó el diagramado de la LandingPage con la estructura y la estetica deseada.
+  * Posteriormente se solicitó el diagramado de la LandingPage con la estructura y la estética deseada.
  
     * Se solicitó corregir el diseño de los gráficos para hacerlos más pequeños y estéticos.
 
@@ -82,7 +86,7 @@ Si el jugador acepta una propuesta que sigue disponible, continúa habilitado y 
     * Se solicitó completar información obviada en las propuestas
 
 
-    * Se solicitó corregir otras pequeñas errores de información.
+    * Se solicitó corregir otros pequeñas errores de información.
  
   * Luego se procedió a solicitar features deseados como el cambio a imagen HD del logo de la startup, el cursor personalizado tipo mira de Valorant y los efectos hover sobre los elementos de los gráficos.
    
@@ -95,16 +99,24 @@ Si el jugador acepta una propuesta que sigue disponible, continúa habilitado y 
   * A continuación se solicitó elaborar el Conversation Log con todos los prompts utilizados.
  
   * Finalmente se solicitó la inclusión del link a GitHub y otro para visualizar el ReadMe en ventana modal.
+
+
     * Se solicitó una corrección por no visualizarse en Vercel.
-    * Se solicitó modificar la barra de navegación y las card de Heroes del Código para mejor visualizacion en celular (Responsive Web Design).
-    * Por último se solicitó completar los promts faltantes al  Conversation Log.
+
+
+    * Se solicitó modificar la barra de navegación y las card de Heroes del Código para mejor visualización en celular (Responsive Web Design).
+
+
+    * Por último se solicitó completar los prompts faltantes al  Conversation Log.
+
 
 * **Comentarios:**
+
+
   * **Tokens:** Se utilizó Gemini 3.8 flash hasta agotar su cupo de tokens gratuitos y luego se continuó con Claude Sonnet 4.6.
 
 
-  * **Prompt de conversión de imagen:** En el afán de realizar todo con agentes, se solicitó la conversión de una imagen, generada por IA, de formato `.jpg` a `.webp`.
-  Este pedido tardó mucho y el agente intentó varios métodos, consumiendo muchos tokens.
+  * **Prompt de conversión de imagen:** En el afán de realizar todo con agentes, se solicitó la conversión de una imagen, generada por IA, de formato `.jpg` a `.webp`. Este pedido tardó mucho y el agente intentó varios métodos, consumiendo muchos tokens.
  
     Pasos:
     * Intenta usar Python Pillow❌.
@@ -122,15 +134,17 @@ Si el jugador acepta una propuesta que sigue disponible, continúa habilitado y 
     * Borra la JPG anterior.
 
 
-  * **Promt de extraccion de imagenes de pagina web:** Se solicitó al agente a que entre a la paguina web del grupo https://los-heroes-del-codigo-tp2.vercel.app/ y saque las 5 fotos que figuran en "Integrantes Los héroes del código" para luego agregarlas a esta landing.
-
-
-    Para realizarlo utilizó un sub agente 'Web Page Inspector' y analizó las imágenes. Luego del análisis como nota final aclara
-
-
+  * **Prompt de extracción de imágenes de la página web:** Se solicitó al agente que ingrese a la página web del grupo (https://los-heroes-del-codigo-tp2.vercel.app/) y extraiga las 5 fotos que figuran en "Integrantes Los héroes del código" para luego agregarlas a esta landing.
+ 
+    Para realizarlo, utilizó un subagente llamado 'Web Page Inspector' y analizó las imágenes.
+   
+    Luego del análisis, aclaró como nota final:
+       
     `“Dado que el repositorio fuente de dicha web se encuentra clonado localmente en c:\Users\usuario\source\repos\los-heroes-del-codigo-tp2, las imágenes webp originales de alta resolución pueden copiarse directamente“.`
    
-    Así que el agente solicitó una serie de permisos para acceder a los archivos y extrajo directamente las tarjetas completas (con información de más).
+    Finalmente, el agente solicitó una serie de permisos para acceder a los archivos y extrajo directamente las tarjetas completas (con información adicional).
+
+
 ---
 
 
